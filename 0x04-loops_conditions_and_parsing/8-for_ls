@@ -4,7 +4,7 @@
 # Loop through all non-hidden files in the current directory
 for file in *; do
 	# Check if the file is not hidden and is a regular file
-	if [[ ! "$file" =~ ^\. && -f "$file" == *-* ]]; then
+	if [[ ! "$file" =~ ^\. && -f "$file" ]]; then
 		echo "${file#*-}"
 	fi
 done
