@@ -2,7 +2,7 @@
 # This script print "Best Schoo" 10 times but the ninth iteration is "Hi"
 
 # Initialize a counter
-count=1
+count=0
 
 while [ "$count" -le 10 ]; do
 	if [ "$count" -ne 9 ]; then
