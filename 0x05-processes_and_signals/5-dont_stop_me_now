@@ -3,5 +3,5 @@
 # Requirements:
 #	- You must use kill.
 
-pid=ps -x | pgrep -f beyond
+pid=$(ps -x | pgrep -f beyond)
 kill "pid"
