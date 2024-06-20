@@ -2,4 +2,6 @@
 # This is a script that that stops 4-to_infinity_and_beyond process.
 # Requirements:
 #	- You must use kill.
-pkill -x '4-to_infinity_and_beyond'
+
+pid=ps -x | pgrep -f beyond
+kill "pid"
