@@ -41,13 +41,14 @@ stop() {
 
 restart() {
 	stop
-	start
+	$MANAGE_MY_PROCESS &
+	echo $! > "$PID_FILE"
 	echo "manage_my_process restarted"
 
 }
 
 usage() {
-	echo "Usage: $0 {start|stop|restart}"
+	echo "Usage: manage_my_process {start|stop|restart}"
 	exit 1
 }
 
