@@ -1,4 +1,3 @@
-#!/usr/bin/pup
 # Creates a file in /tmp
 
 file { '/tmp/school':
