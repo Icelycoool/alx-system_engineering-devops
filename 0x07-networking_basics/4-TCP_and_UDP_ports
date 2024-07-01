@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A script that that displays listening ports.
+
+sudo lsof -i -P -n | grep LISTEN
