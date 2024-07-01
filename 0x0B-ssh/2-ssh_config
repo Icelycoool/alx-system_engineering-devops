@@ -1,0 +1,8 @@
+# Configure ssh client to connect to it remotely
+
+Host *
+   HashKnownHosts yes
+   User ubuntu
+   IdentifyFile ~/.ssh/school
+   PasswordAuthentication no
+
