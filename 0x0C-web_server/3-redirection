@@ -6,10 +6,6 @@ apt-get install -y nginx
 
 echo "Hello World!" > /var/www/html/index.html
 
-sed -i '/index index.html index.htm;/a \
-\n    location /redirect_me {\
-\n        return 301 http://www.youtube.com/watch?v=9t9Mp0BGnyI;\
-\n    }\
-\n' /etc/nginx/sites-available/default
+sed -i '/index index.html index.htm;/a \\n    location /redirect_me {\n        return 301 http://www.youtube.com/watch?v=9t9Mp0BGnyI;\n    }\n' /etc/nginx/sites-available/default
 
 systemctl reload nginx
