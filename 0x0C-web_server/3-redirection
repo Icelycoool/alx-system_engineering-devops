@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # A script that installs, configure nginx and redirects
 
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install -y nginx
 
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
