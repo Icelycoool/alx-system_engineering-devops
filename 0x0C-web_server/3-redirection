@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# A scrip that redirects to a new page
+
+apt-get update
+apt-get install -y nginx
+
+mkdir /etc/nginx/html
+echo "Hello World!" > /etc/nginx/html/index.html
+
+cat <<EOL > /etc/nginx/sites-available/default
+server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /etc/nginx/html;
+    index  index.html index.htm;
+
+    location /redirect_me {
+        return 301 http://www.youtube.com/watch?v=9t9Mp0BGnyI/;
+    }
+}
+EOL
+
+service nginx restart
