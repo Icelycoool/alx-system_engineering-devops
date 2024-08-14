@@ -16,3 +16,5 @@ def recurse(subreddit, hot_list=[]):
     headers = {
             "User-Agent: "Custom"
     }
+
+
