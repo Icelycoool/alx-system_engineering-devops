@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-# A script that fixes teh apache server
-
+# A script that fixes the apache server
 sudo service apache2 start
