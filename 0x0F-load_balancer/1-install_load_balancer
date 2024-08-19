@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Installing and configuring HAproxy in a new server
+
+# Update the packages and install HAproxy
+sudo apt-get update
+sudo apt-get install -y haproxy
+
+# Change the configuration file permissions
+sudo chown $USER:USER /etc/haproxy/haproxy.cfg
+
+# Configuring the HAproxy
+echo "
+front-end http_front
+    bind *:80
+    mode http
+    default_backend app
+
+backend app
+    balance roundrobin
+    server 496707-web-01 52.204.72.212:80 check
+    server 496707-web-02 34.232.78.22:80 check" >> /etc/haproxy/haproxy.cfg
+
+# Restart the HAproxy service
+sudo service haproxy restart
