@@ -5,9 +5,6 @@
 sudo apt-get update
 sudo apt-get install -y haproxy
 
-# Change the configuration file permissions
-sudo chown $USER:USER /etc/haproxy/haproxy.cfg
-
 # Configuring the HAproxy
 echo "
 frontend mohamedcali.tech
