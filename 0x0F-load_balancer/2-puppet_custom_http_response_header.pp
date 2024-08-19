@@ -4,7 +4,7 @@
 package { 'nginx':
 	ensure => installed,
 }
-
+->
 # Update nginx configuration and add custom HTTP header
 file_line { 'set_http_header':
 	path    => '/etc/nginx/sites-enabled/default',
@@ -13,10 +13,10 @@ file_line { 'set_http_header':
 	after   => 'server_name _;',
 	require => Package['nginx'],
 }
-
+->
 # Ensure nginx is running and will restart after changes
 service { 'nginx':
 	ensure    => running,
 	enable    => true,
-	subscribe => File_line['set_http_header'],
+	require   => ['nginx']
 }
