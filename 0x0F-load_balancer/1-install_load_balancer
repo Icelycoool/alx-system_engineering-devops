@@ -10,7 +10,7 @@ sudo chown $USER:USER /etc/haproxy/haproxy.cfg
 
 # Configuring the HAproxy
 echo "
-front-end http_front
+frontend mohamedcali.tech
     bind *:80
     mode http
     default_backend app
