@@ -8,7 +8,7 @@ package { 'nginx':
 # Update nginx configuration and add custom HTTP header
 file_line { 'set_http_header':
 	path    => '/etc/nginx/sites-enabled/default',
-	line    => 'add_header X-Served-By $HOSTNAME;',
+	line    => 'add_header X-Served-By $hostname;',
 	match   => 'server_name _;',
 	after   => 'server_name _;',
 	require => Package['nginx'],
