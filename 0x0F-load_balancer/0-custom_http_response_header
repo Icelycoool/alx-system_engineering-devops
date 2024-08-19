@@ -1,4 +1,21 @@
 #!/usr/bin/env bash
+# Configuring A web server to have HTTP response header
+
+# Update packages and Install packages
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# Creatring and index page
+echo "Hello world!" | sudo tee /var/www/html/index.html
+
+# Performing a redirection
+new_string="server_name _";\n\trewrite ^\/redirect_me https:\/\/github.com\/Icelycoool permanent;"
+
+sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
+
+# Creating custom error page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
 # Custom HTTP Response Header
 sudo sed -i "/server_name _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
 
