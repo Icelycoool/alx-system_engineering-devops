@@ -13,11 +13,8 @@ sudo apt-get install -y nginx
 # Makesure nginx is running
 sudo service nginx status
 
+# Enable nginx
+sudo service nginx enable
+
 # Start nginx
 sudo service nginx start
-
-# Set nginx to listen on port 80
-sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
-
-# Restart nginx
-sudo service nginx restart
