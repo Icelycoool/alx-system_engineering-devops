@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
 # Debugging nginx not listening on port 80
-
-apt-get update -y
-apt-get install -y nginx
-sudo service nginx enable
-sudo service nginx start
+cat /etc/nginx/sites-available/default > /etc/nginx/sites-enabled/default
+sudo service nginx restart
