@@ -16,5 +16,8 @@ sudo service nginx status
 # Start nginx
 sudo service nginx start
 
-# Set ngin x to listen on port 80
+# Set nginx to listen on port 80
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+
+# Restart nginx
+sudo service nginx restart
