@@ -2,8 +2,8 @@
 
 # Increase teh ulimit
 exec { 'fix-nginx':
-    command => 'sed -i "n/15/4096/" /etc/default/nginx',
-    path    => '/usr/local/sbin:/usr/local/bin:/usr/bin:/sbin:/bin',
+    command => '/bin/sed -i "s/15/4096/" /etc/default/nginx',
+    path    => '/usr/local/bin/:/bin/',
 }
 ->
 # Restart nginx
